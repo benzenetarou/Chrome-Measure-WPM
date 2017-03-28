@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>Simple Word Count</title>
-  <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<title>Simple Word Count</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<textarea></textarea>
-<div id="timer">
-	Time:<input type="text" class="timer">(s)
-</div>
-<div id="counter"></div>
+	<h2 id="head">Input article</h2>
+		<textarea id="article" rows="10"></textarea>
+		<div id="elements">
+		<div id="words_result"></div>
+		<div id="timer__container">Timeeee:<span><input type="text" id="timer"></span>(s)
+		</div>
+		</div>
+	<div id="wpm__container"><div id="wpm"></div></div>
 </body>
 <script src="jquery.min.js"></script>
 <script src="popup.js"></script>

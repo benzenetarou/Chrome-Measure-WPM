@@ -1,6 +1,43 @@
 @charset "UTF-8";
 
-p {
+body {
+	width: 500px;
+	height: 400px;
+	font-size: 16px;
+}
+
+#head {
+	margin: 10px;
+	text-align: center;
+}
+
+#article_container {
+	width: 90%;
+	height: 300px;
+	text-align: center;
+}
+
+#article {
+	width: 100%;
+}
+
+#words_result {
+	display: inline-block;
+	margin: 20px;
+}
+
+#timer__container {
+	display: inline-block;
+	float: right;
+	margin: 20px;
+}
+
+#timer {
+	margin: 10px;
+	size: 1.5em;
+}
+
+#counter {
 	color:tomato;
 	background: #ededed;
 }
