@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>Simple Word Count</title>
 	<link rel="stylesheet" href="style.css">
+	<!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script> -->
 </head>
+
 <body>
 	<h2 id="head">Input article</h2>
-		<textarea id="article" rows="10"></textarea>
-		<div id="elements">
+	<textarea id="article" rows="10"></textarea>
+	<div id="elements">
 		<div id="words_result"></div>
 		<div id="timer__container">Timeeee:<span><input type="text" id="timer"></span>(s)
 		</div>
-		</div>
-	<div id="wpm__container"><div id="wpm"></div></div>
+	</div>
+	<div id="wpm__container">
+		<div id="wpm"></div>
+	</div>
+	<div id="timer__container">
+		<div id="startTime">startTime:<span><input type="text" id="startTimeValue"></span>(s)</div>
+		<div id="stopTime">stopTime:<span><input type="text" id="stopTimeValue"></span>(s)</div>
+		<button id="startTimeButton">start</button>
+		<button id="stopTimeButton">stop</button>
+	</div>
+	<script src="jquery.min.js"></script>
+	<script type="text/javascript" type="text/javascript" src="popup.js"></script>
 </body>
-<script src="jquery.min.js"></script>
-<script src="popup.js"></script>
 </html>
