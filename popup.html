@@ -5,23 +5,21 @@
 	<meta charset="UTF-8">
 	<title>Simple Word Count</title>
 	<link rel="stylesheet" href="style.css">
-	<!-- <script type="text/javascript" src="https://www.google.com/jsapi"></script> -->
 </head>
 
 <body>
-	<h2 id="head">Input article</h2>
-	<textarea id="article" rows="10"></textarea>
-	<div id="elements">
-		<div id="words_result"></div>
-		<div id="timer__container">Timeeee:<span><input type="text" id="timer"></span>(s)
+	<div class="container">
+		<h2 id="header">Measure WPM</h2>
+		<textarea id="article" rows="10"></textarea>
+		<div class="value__container">
+			<div id="words_result"></div>
+			<div id="timer__container">Time: <span id="timer"></span>(s)</div>
+			<div id="wpm"></div>
 		</div>
-	</div>
-	<div id="wpm__container">
-		<div id="wpm"></div>
-	</div>
-	<div id="timer__container">
-		<button id="startTimeButton">start</button>
-		<button id="stopTimeButton">stop</button>
+		<div class="button__container">
+			<button id="startTimeButton" class="btn btn-start">start</button>
+			<button id="stopTimeButton" class="btn btn-stop">stop</button>
+		</div>
 	</div>
 	<script src="jquery.min.js"></script>
 	<script type="text/javascript" type="text/javascript" src="popup.js"></script>

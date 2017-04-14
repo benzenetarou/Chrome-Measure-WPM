@@ -8,7 +8,6 @@ $(document).ready(function() {//ポップアップを開いたときに一度だ
     retrieve(count);
     //ポップアップを開いて、timer計測するかどうかを投げる。並行処理のために、setTimeoutを使用
     setTimeout(function(){runtimer()},100);
-
 })
 
 $('#article').on('keyup propertychange paste', function() {
@@ -33,10 +32,10 @@ function count() {
     }else{
         time = Math.floor((stopTime - startTime)/1000);
     }
-    $('#timer').val(time);
+    $('#timer').html(time);
     wpm = Math.floor(words / (time / 60));
     $('#words_result').html(words + ' words');
-    $('#wpm').html('WPM:' + wpm);
+    $('#wpm').html('WPM: ' + wpm);
     store();
 }
 
@@ -60,7 +59,12 @@ function retrieve(callback) {//ポップアップを開いたときに、保持�
                 stopTime = items.stopTime;
                 running = items.running;
             }
-            callback();//基本的には$(document).readyでcountを呼ぶだけ。
+            callback();//基本的には$(document).readyでcountを呼ぶだけ。callbackを使ってみたかった。
+            if(running){//計測中ならstartボタンを無効
+                $('#startTimeButton').prop("disabled", true).addClass("transparent");
+            }else{
+                $('#stopTimeButton').prop("disabled", true).addClass("transparent");
+            }
         }
     });
 }
@@ -72,6 +76,8 @@ function startTimer() {
     running = true;
     runtimer();
     store();
+    $('#startTimeButton').prop("disabled", true).addClass("transparent");
+    $('#stopTimeButton').prop("disabled", false).removeClass("transparent");
 }
 
 function stopTimer() {
@@ -80,6 +86,8 @@ function stopTimer() {
     running = false;
     clearInterval(counting);
     store();
+    $('#stopTimeButton').prop("disabled", true).addClass("transparent");
+    $('#startTimeButton').prop("disabled", false).removeClass("transparent");
 }
 
 function runtimer() {//ポップアップ時にtimerを起動するかどうかを決める
